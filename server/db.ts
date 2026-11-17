@@ -6,8 +6,8 @@ import { today } from '../shared/calc.ts';
 /** `--name=value` from the command line (works the same on Windows, macOS and Linux). */
 export const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 /** Demo copy: its own data folder with sample data, so nobody practises on the real books. */
-export const DEMO = process.argv.includes('--demo');
-export const DATA_DIR = process.env.DATA_DIR || arg('data') || join(import.meta.dirname, '..', DEMO ? 'data-demo' : 'data');
+export const DEMO = process.argv.includes('--demo') || process.env.DEMO === 'true' || !!process.env.VERCEL;
+export const DATA_DIR = process.env.DATA_DIR || (process.env.VERCEL ? '/tmp' : (arg('data') || join(import.meta.dirname, '..', DEMO ? 'data-demo' : 'data')));
 const file = process.env.DB_PATH || join(DATA_DIR, 'app.db');
 const onDisk = file !== ':memory:';
 if (onDisk) mkdirSync(join(DATA_DIR, 'backups'), { recursive: true });

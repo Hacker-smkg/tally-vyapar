@@ -67,17 +67,18 @@ if (dev) {
   const vite = await createServer({ root, server: { middlewareMode: true }, appType: 'spa' });
   app.use(vite.middlewares);
 } else {
-  if (!existsSync(join(dist, 'index.html'))) {
+  if (existsSync(join(dist, 'index.html'))) {
+    // The built screens load only their own files: no outside scripts, no embedding in other sites.
+    app.use((_req, res, next) => {
+      res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'");
+      next();
+    });
+    app.use(express.static(dist, { setHeaders: (res, p) => res.setHeader('Cache-Control', /[\\/]assets[\\/]/.test(p) ? 'public, max-age=31536000, immutable' : 'no-cache') }));
+    app.get(/.*/, (_req, res) => res.sendFile(join(dist, 'index.html')));
+  } else if (!process.env.VERCEL) {
     console.error('The screens are not built yet. Run:  npm run build');
     process.exit(1);
   }
-  // The built screens load only their own files: no outside scripts, no embedding in other sites.
-  app.use((_req, res, next) => {
-    res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'");
-    next();
-  });
-  app.use(express.static(dist, { setHeaders: (res, p) => res.setHeader('Cache-Control', /[\\/]assets[\\/]/.test(p) ? 'public, max-age=31536000, immutable' : 'no-cache') }));
-  app.get(/.*/, (_req, res) => res.sendFile(join(dist, 'index.html')));
 }
 
 if (DEMO && !get('SELECT 1 FROM users LIMIT 1')) {
@@ -93,13 +94,17 @@ if (DEMO && !get('SELECT 1 FROM users LIMIT 1')) {
   writeFileSync(join(DATA_DIR, 'LOGIN.txt'), `Demo copy of Vastra Books (sample data only)\nUsername: ${login.username}\nPassword: ${login.password}\n`);
 }
 
-dailyBackup();
-setInterval(dailyBackup, 6 * 3600_000).unref();
+if (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+  dailyBackup();
+  setInterval(dailyBackup, 6 * 3600_000).unref();
 
-app.listen(port, '0.0.0.0', () => {
-  const lan = Object.values(networkInterfaces()).flat().filter((n) => n && n.family === 'IPv4' && !n.internal).map((n) => `http://${n!.address}:${port}`);
-  console.log(`\n  Vastra Books is running${DEMO ? ' (DEMO copy, sample data)' : ''}${dev ? ' (development)' : ''}\n`);
-  console.log(`  On this computer:   http://localhost:${port}`);
-  for (const url of lan) console.log(`  On the same Wi-Fi:  ${url}`);
-  console.log(`\n  Data file: ${join(DATA_DIR, 'app.db')}\n  Daily backups: ${join(DATA_DIR, 'backups')}\n  Press Ctrl+C to stop.\n`);
-});
+  app.listen(port, '0.0.0.0', () => {
+    const lan = Object.values(networkInterfaces()).flat().filter((n) => n && n.family === 'IPv4' && !n.internal).map((n) => `http://${n!.address}:${port}`);
+    console.log(`\n  Vastra Books is running${DEMO ? ' (DEMO copy, sample data)' : ''}${dev ? ' (development)' : ''}\n`);
+    console.log(`  On this computer:   http://localhost:${port}`);
+    for (const url of lan) console.log(`  On the same Wi-Fi:  ${url}`);
+    console.log(`\n  Data file: ${join(DATA_DIR, 'app.db')}\n  Daily backups: ${join(DATA_DIR, 'backups')}\n  Press Ctrl+C to stop.\n`);
+  });
+}
+
+export default app;
