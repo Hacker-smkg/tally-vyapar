@@ -6,6 +6,18 @@ Built for 1 to 10 users. It runs on one office computer; everyone else opens it 
 
 Design and data model: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
+## 🚀 Deploy to Cloud (Client + Server Fullstack)
+
+Both the React frontend and Express backend are pre-configured to deploy together:
+
+- **Vercel (Instant Serverless Demo):**
+  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHacker-smkg%2Ftally-vyapar)
+  *Uses `api/index.ts` serverless handler and `vercel.json` rewrites to serve both the frontend and API.*
+
+- **Render (24/7 Persistent Node.js App):**
+  [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Hacker-smkg/tally-vyapar)
+  *Uses `render.yaml` to spin up a full Node 22 web service.*
+
 ## Try it first (demo copy)
 
 The demo copy has its own data folder (`data-demo/`) with a sample business, so nothing you do there touches the real books.
