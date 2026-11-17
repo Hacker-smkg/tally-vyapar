@@ -1,7 +1,8 @@
 import { DatabaseSync } from 'node:sqlite';
-import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { today } from '../shared/calc.ts';
+import { SCHEMA } from './schema.ts';
 
 /** `--name=value` from the command line (works the same on Windows, macOS and Linux). */
 export const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
@@ -13,8 +14,8 @@ const onDisk = file !== ':memory:';
 if (onDisk) mkdirSync(join(DATA_DIR, 'backups'), { recursive: true });
 
 export const db = new DatabaseSync(file);
-db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000;');
-db.exec(readFileSync(join(import.meta.dirname, 'schema.sql'), 'utf8'));
+db.exec(`${process.env.VERCEL ? 'PRAGMA journal_mode = MEMORY;' : 'PRAGMA journal_mode = WAL;'} PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000;`);
+db.exec(SCHEMA);
 
 type Row = Record<string, any>;
 export const all = (sql: string, ...p: any[]) => db.prepare(sql).all(...p) as Row[];

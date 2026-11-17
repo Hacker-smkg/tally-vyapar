@@ -54,7 +54,7 @@ api.get('/backup', requireOwner, (_req, res) => {
 
 app.use('/api', api);
 app.use('/api', (_req, _res, next) => next(new HttpError(404, 'Not found')));
-app.use('/api', (err: any, _req: Request, res: Response, _next: NextFunction) => {
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
   const known = err instanceof HttpError || (err?.status === 404 && !!err.message);
   const status = known ? err.status : err?.type === 'entity.too.large' ? 413 : err?.type === 'entity.parse.failed' ? 400 : 500;
   if (status === 500) console.error(err);
