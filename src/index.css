@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/* The brand colour comes from Settings at run time (see App.tsx). */
+:root { --brand: #4f46e5; }
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-brand: var(--brand);
+}
+
+html, body, #root { height: 100%; }
+body { @apply bg-slate-50 text-slate-800 antialiased; font-feature-settings: "cv11", "ss01"; }
+button, [role="button"], summary, label[for], select { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+.num { font-variant-numeric: tabular-nums; }
+input[type="number"]::-webkit-inner-spin-button { display: none; }
+dialog::backdrop { background: rgb(15 23 42 / 0.45); backdrop-filter: blur(2px); }
+
+/* Paper: bills, price tags and reports print without the app chrome. */
+.print-only { display: none; }
+@media print {
+  @page { margin: 10mm; }
+  html, body, #root { height: auto; }
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-only { display: block; }
+  .print-plain { box-shadow: none !important; border: 0 !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  main { padding: 0 !important; overflow: visible !important; }
+  table { break-inside: auto; }
+  tr { break-inside: avoid; }
+  thead { display: table-header-group; } /* column headings repeat on every printed page */
+  /* Reports print compact so a month fits on a few sheets. */
+  .print-compact table { font-size: 8.5pt; }
+  .print-compact th, .print-compact td { padding: 2.5pt 5pt !important; white-space: nowrap; }
+  .print-compact td:nth-child(n+2):not(.num) { white-space: normal; }
+  .print-grid { display: block !important; }
+  .print-compact .overflow-x-auto { overflow: visible !important; }
+}

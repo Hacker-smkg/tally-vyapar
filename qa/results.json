@@ -1,0 +1,1323 @@
+{
+ "date": "2026-11-17",
+ "node": "v22.23.1",
+ "total": 146,
+ "passed": 146,
+ "failed": 0,
+ "rows": [
+  {
+   "id": "AUTH-01",
+   "area": "First run and login",
+   "type": "Functional",
+   "title": "A fresh copy asks for the owner account and shows no demo login",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "AUTH-02",
+   "area": "First run and login",
+   "type": "Security",
+   "title": "Every data endpoint refuses a visitor who is not logged in",
+   "status": "Pass",
+   "detail": "31 endpoints",
+   "ms": 63
+  },
+  {
+   "id": "AUTH-03",
+   "area": "First run and login",
+   "type": "Negative",
+   "title": "Setup refuses a password shorter than 8 characters and a missing business name",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "AUTH-04",
+   "area": "First run and login",
+   "type": "Functional",
+   "title": "Setup creates the owner, logs them in, and sets a protected cookie",
+   "status": "Pass",
+   "detail": "",
+   "ms": 38
+  },
+  {
+   "id": "AUTH-05",
+   "area": "First run and login",
+   "type": "Security",
+   "title": "Setup cannot be run a second time",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "AUTH-06",
+   "area": "First run and login",
+   "type": "Negative",
+   "title": "A wrong password and an unknown user get the same answer",
+   "status": "Pass",
+   "detail": "",
+   "ms": 34
+  },
+  {
+   "id": "AUTH-07",
+   "area": "First run and login",
+   "type": "Functional",
+   "title": "Username ignores letter case; password does not",
+   "status": "Pass",
+   "detail": "",
+   "ms": 63
+  },
+  {
+   "id": "AUTH-08",
+   "area": "First run and login",
+   "type": "Security",
+   "title": "Logging out kills the session on the server, not only in the browser",
+   "status": "Pass",
+   "detail": "",
+   "ms": 35
+  },
+  {
+   "id": "AUTH-09",
+   "area": "First run and login",
+   "type": "Security",
+   "title": "Eight wrong passwords lock that username; other users can still log in",
+   "status": "Pass",
+   "detail": "",
+   "ms": 50
+  },
+  {
+   "id": "AUTH-10",
+   "area": "First run and login",
+   "type": "Security",
+   "title": "A made-up or tampered session cookie is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "MAST-01",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "The owner's own category list is pre-loaded",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "MAST-02",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Add a second store, then rename it",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "MAST-03",
+   "area": "Master data",
+   "type": "Negative",
+   "title": "Duplicate location name (any letter case) and unknown location type are refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "MAST-04",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Add a category and a sub-category; adding the same name again does not duplicate it",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "MAST-05",
+   "area": "Master data",
+   "type": "Negative",
+   "title": "A third category level is refused; a category with sub-categories cannot be deleted",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "MAST-06",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Add a supplier, a job worker and two customers; an old balance is carried in",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "MAST-07",
+   "area": "Master data",
+   "type": "Negative",
+   "title": "A party without a name or with an unknown type is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "MAST-08",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Edit a party",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "MAST-09",
+   "area": "Master data",
+   "type": "Integrity",
+   "title": "A party with a balance cannot be removed; a settled one can and leaves the list",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "MAST-10",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Add an item with sizes, colours, prices and opening stock; each size gets its own numeric barcode",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "MAST-11",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Add a blazer and a raw material measured in metres",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "MAST-12",
+   "area": "Master data",
+   "type": "Negative",
+   "title": "An item with no size row, or opening stock with no location, is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "MAST-13",
+   "area": "Master data",
+   "type": "Integrity",
+   "title": "Two items cannot share a barcode, and the refused item is not half-saved",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "MAST-14",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Edit prices, add a size, then remove the unused size; stock is untouched",
+   "status": "Pass",
+   "detail": "",
+   "ms": 10
+  },
+  {
+   "id": "MAST-15",
+   "area": "Master data",
+   "type": "Integrity",
+   "title": "An item with stock cannot be removed; a category in use cannot be deleted",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "MAST-16",
+   "area": "Master data",
+   "type": "Functional",
+   "title": "Add an expense for a store; the list filters by date and store",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "MAST-17",
+   "area": "Master data",
+   "type": "Negative",
+   "title": "An expense of zero, a negative amount, an unknown payment mode or a badly written date is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "BILL-01",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Calculation",
+   "title": "Purchase: freight is shared into the cost per metre; the supplier balance updates",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "BILL-02",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Calculation",
+   "title": "Walk-in sale: line discount, bill discount, courier charge and round-off to the rupee",
+   "status": "Pass",
+   "detail": "",
+   "ms": 9
+  },
+  {
+   "id": "BILL-03",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Negative",
+   "title": "A walk-in bill that is not fully paid, or a payment above the total, is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "BILL-04",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "Selling more than the stock is refused, leaves no trace, and does not use up a bill number",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "BILL-05",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "The same item on two lines cannot together exceed the stock",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "BILL-06",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Negative",
+   "title": "Zero, negative or non-numeric quantity, negative rate, and discount outside 0–100% are refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 15
+  },
+  {
+   "id": "BILL-07",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Boundary",
+   "title": "Half a shirt cannot be billed; 2.5 metres of fabric can be bought",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "BILL-08",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Negative",
+   "title": "Unknown item, location, party or bill type is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 9
+  },
+  {
+   "id": "BILL-09",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Boundary",
+   "title": "Impossible dates (30 February, month 13) and future dates are refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 9
+  },
+  {
+   "id": "BILL-10",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Boundary",
+   "title": "A 100% discount line and a zero-rupee bill are accepted; a bill discount larger than the bill is capped",
+   "status": "Pass",
+   "detail": "",
+   "ms": 16
+  },
+  {
+   "id": "BILL-11",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Functional",
+   "title": "Credit sale to a customer raises their balance",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "BILL-12",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Functional",
+   "title": "A payment against a bill shows on the bill and lowers the balance; overpaying the bill is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "BILL-13",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Functional",
+   "title": "On-account Payment In and Payment Out move the party balance",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "BILL-14",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Negative",
+   "title": "A payment with no amount, no party or an unknown direction is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "BILL-15",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Functional",
+   "title": "Sale return against a bill puts stock back and lowers the balance",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "BILL-16",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "A return cannot take back more pieces than the bill sold (4 sold, 1 already returned, 4 asked)",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "BILL-17",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "A return cannot be made against an item that was not on the bill, or against a cancelled or unknown bill",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "BILL-18",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "A sale that has a return against it cannot be cancelled first",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "BILL-19",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Functional",
+   "title": "Purchase return lowers the stock and what is owed to the supplier",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "BILL-20",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "Cancelling a bill returns stock and money, keeps the number, and reports drop it",
+   "status": "Pass",
+   "detail": "",
+   "ms": 21
+  },
+  {
+   "id": "BILL-21",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Integrity",
+   "title": "A purchase whose stock has been used or returned cannot be cancelled",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "BILL-22",
+   "area": "Sales, purchases, returns and payments",
+   "type": "Functional",
+   "title": "The bill list filters by type, date, store and search text",
+   "status": "Pass",
+   "detail": "",
+   "ms": 14
+  },
+  {
+   "id": "GST-01",
+   "area": "GST switch",
+   "type": "Negative",
+   "title": "GST cannot be switched on before a GSTIN is entered",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "GST-02",
+   "area": "GST switch",
+   "type": "Functional",
+   "title": "Enter a GSTIN and state, then switch GST on",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "GST-03",
+   "area": "GST switch",
+   "type": "Calculation",
+   "title": "Garment slab on tax-inclusive prices: 5% up to ₹2,500, 18% above; CGST equals SGST",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "GST-04",
+   "area": "GST switch",
+   "type": "Calculation",
+   "title": "A customer in another state is charged IGST instead",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "GST-05",
+   "area": "GST switch",
+   "type": "Calculation",
+   "title": "With prices before tax, GST is added on top",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "GST-06",
+   "area": "GST switch",
+   "type": "Calculation",
+   "title": "The GST Summary report adds up by rate",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "GST-07",
+   "area": "GST switch",
+   "type": "Functional",
+   "title": "Switching GST off hides the GST report and new bills carry no tax",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "STOCK-01",
+   "area": "Stock and production",
+   "type": "Functional",
+   "title": "A transfer moves stock from the godown to a store",
+   "status": "Pass",
+   "detail": "",
+   "ms": 9
+  },
+  {
+   "id": "STOCK-02",
+   "area": "Stock and production",
+   "type": "Integrity",
+   "title": "A transfer is all-or-nothing: one short line stops the whole transfer",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "STOCK-03",
+   "area": "Stock and production",
+   "type": "Negative",
+   "title": "A transfer to the same place, of zero pieces, of half a piece, or with no lines is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "STOCK-04",
+   "area": "Stock and production",
+   "type": "Functional",
+   "title": "An adjustment removes damaged pieces and appears as a write-off in Profit & Loss",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "STOCK-05",
+   "area": "Stock and production",
+   "type": "Negative",
+   "title": "An adjustment of zero, without a reason, or below zero stock is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "STOCK-06",
+   "area": "Stock and production",
+   "type": "Integrity",
+   "title": "Item history lists every movement, and the movements add up to the stock shown",
+   "status": "Pass",
+   "detail": "",
+   "ms": 3
+  },
+  {
+   "id": "STOCK-07",
+   "area": "Stock and production",
+   "type": "Functional",
+   "title": "A cost sheet saved as \"in production\" takes raw material out and shows as work in progress",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "STOCK-08",
+   "area": "Stock and production",
+   "type": "Calculation",
+   "title": "Completing with the real piece count and final costs gives the right cost per piece and average cost",
+   "status": "Pass",
+   "detail": "cost per piece ₹400.00",
+   "ms": 11
+  },
+  {
+   "id": "STOCK-09",
+   "area": "Stock and production",
+   "type": "Negative",
+   "title": "A finished cost sheet cannot be completed twice; an empty sheet or one with no pieces is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "STOCK-10",
+   "area": "Stock and production",
+   "type": "Integrity",
+   "title": "Cancelling an open cost sheet puts the raw material back",
+   "status": "Pass",
+   "detail": "",
+   "ms": 12
+  },
+  {
+   "id": "STOCK-11",
+   "area": "Stock and production",
+   "type": "Integrity",
+   "title": "A finished cost sheet whose pieces are already sold cannot be cancelled",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "STOCK-12",
+   "area": "Stock and production",
+   "type": "Functional",
+   "title": "\"Allow billing when stock is short\" lets a sale go below zero; switching it off blocks it again",
+   "status": "Pass",
+   "detail": "",
+   "ms": 15
+  },
+  {
+   "id": "STOCK-13",
+   "area": "Stock and production",
+   "type": "Integrity",
+   "title": "A location that still holds stock cannot be switched off; a switched-off location cannot bill",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "ROLE-01",
+   "area": "Users, roles and security",
+   "type": "Functional",
+   "title": "The owner adds two staff, each tied to a store, and they can log in",
+   "status": "Pass",
+   "detail": "",
+   "ms": 137
+  },
+  {
+   "id": "ROLE-02",
+   "area": "Users, roles and security",
+   "type": "Negative",
+   "title": "A duplicate username (any letter case) and a short password are refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "ROLE-03",
+   "area": "Users, roles and security",
+   "type": "Roles",
+   "title": "Staff are refused on every owner-only screen and action",
+   "status": "Pass",
+   "detail": "31 actions",
+   "ms": 51
+  },
+  {
+   "id": "ROLE-04",
+   "area": "Users, roles and security",
+   "type": "Roles",
+   "title": "Staff see no profit, no cost value and no other store on the dashboard or in reports",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "ROLE-05",
+   "area": "Users, roles and security",
+   "type": "Roles",
+   "title": "A staff bill is always made from their own store, whatever the request says",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "ROLE-06",
+   "area": "Users, roles and security",
+   "type": "Roles",
+   "title": "Staff list and open only the bills of their own store",
+   "status": "Pass",
+   "detail": "",
+   "ms": 10
+  },
+  {
+   "id": "ROLE-07",
+   "area": "Users, roles and security",
+   "type": "Roles",
+   "title": "Staff cannot cancel someone else's bill; they can cancel their own bill of today",
+   "status": "Pass",
+   "detail": "",
+   "ms": 8
+  },
+  {
+   "id": "ROLE-08",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "A switched-off user is logged out at once and cannot log in again",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "ROLE-09",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "A password reset by the owner signs that user out everywhere; the old password stops working",
+   "status": "Pass",
+   "detail": "",
+   "ms": 101
+  },
+  {
+   "id": "ROLE-10",
+   "area": "Users, roles and security",
+   "type": "Integrity",
+   "title": "The last active owner cannot be demoted or switched off",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "ROLE-11",
+   "area": "Users, roles and security",
+   "type": "Boundary",
+   "title": "The app holds 10 active users; the 11th is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 252
+  },
+  {
+   "id": "ROLE-12",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "SQL-injection text in login, search, dates and names is treated as plain text",
+   "status": "Pass",
+   "detail": "",
+   "ms": 14
+  },
+  {
+   "id": "ROLE-13",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "Script text and formula text in a name are stored as text and reach Excel as text, not as a formula",
+   "status": "Pass",
+   "detail": "",
+   "ms": 46
+  },
+  {
+   "id": "ROLE-14",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "Requests that are not JSON are refused, which blocks form posts from other websites",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "ROLE-15",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "Broken JSON, an over-long field and an oversized upload get a clean error, and the app keeps running",
+   "status": "Pass",
+   "detail": "",
+   "ms": 13
+  },
+  {
+   "id": "ROLE-16",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "Security headers are set and the server does not advertise what it runs on",
+   "status": "Pass",
+   "detail": "",
+   "ms": 3
+  },
+  {
+   "id": "ROLE-17",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "Source code, the database and files outside the app are never served",
+   "status": "Pass",
+   "detail": "",
+   "ms": 16
+  },
+  {
+   "id": "ROLE-18",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "The logo accepts only PNG / JPG / WebP image data; the brand colour accepts only a colour code",
+   "status": "Pass",
+   "detail": "",
+   "ms": 14
+  },
+  {
+   "id": "ROLE-19",
+   "area": "Users, roles and security",
+   "type": "Security",
+   "title": "An unknown API address gives a JSON \"not found\", not a web page",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "EDGE-01",
+   "area": "Edge cases (second round)",
+   "type": "Negative",
+   "title": "Changing or deleting a record that does not exist says \"not found\" instead of pretending to succeed or crashing",
+   "status": "Pass",
+   "detail": "13 requests",
+   "ms": 21
+  },
+  {
+   "id": "EDGE-02",
+   "area": "Edge cases (second round)",
+   "type": "Integrity",
+   "title": "The payment on a walk-in bill cannot be deleted on its own (the bill would be left unpaid); cancel the bill instead",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "EDGE-03",
+   "area": "Edge cases (second round)",
+   "type": "Functional",
+   "title": "A payment on a credit bill can be deleted by the owner and the balance goes back up",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "EDGE-04",
+   "area": "Edge cases (second round)",
+   "type": "Roles",
+   "title": "Staff can refund only against a bill: a return with no bill is refused for staff, allowed for the owner",
+   "status": "Pass",
+   "detail": "",
+   "ms": 14
+  },
+  {
+   "id": "EDGE-05",
+   "area": "Edge cases (second round)",
+   "type": "Boundary",
+   "title": "A cost sheet cannot be completed on a date before it was started",
+   "status": "Pass",
+   "detail": "",
+   "ms": 5
+  },
+  {
+   "id": "EDGE-06",
+   "area": "Edge cases (second round)",
+   "type": "Negative",
+   "title": "A username must be at least 3 characters with no spaces",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "REP-01",
+   "area": "Reports and exports",
+   "type": "Functional",
+   "title": "All 19 reports open for the owner with a title, a period line, columns and rows",
+   "status": "Pass",
+   "detail": "",
+   "ms": 39
+  },
+  {
+   "id": "REP-02",
+   "area": "Reports and exports",
+   "type": "Export",
+   "title": "Every report downloads as a real Excel file and a real Word file with a sensible file name",
+   "status": "Pass",
+   "detail": "38 files",
+   "ms": 286
+  },
+  {
+   "id": "REP-03",
+   "area": "Reports and exports",
+   "type": "Export",
+   "title": "The Excel Sales Register holds the same rows and total as the screen, with real dates and numbers",
+   "status": "Pass",
+   "detail": "",
+   "ms": 14
+  },
+  {
+   "id": "REP-04",
+   "area": "Reports and exports",
+   "type": "Export",
+   "title": "The Word Profit & Loss contains the business name, the title and the net profit figure",
+   "status": "Pass",
+   "detail": "",
+   "ms": 10
+  },
+  {
+   "id": "REP-05",
+   "area": "Reports and exports",
+   "type": "Negative",
+   "title": "A wrong report name, dates the wrong way round, a bad date, an unknown format or filter gets a clear refusal",
+   "status": "Pass",
+   "detail": "",
+   "ms": 14
+  },
+  {
+   "id": "REP-06",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "Every party's statement closes at exactly that party's balance",
+   "status": "Pass",
+   "detail": "6 parties",
+   "ms": 13
+  },
+  {
+   "id": "REP-07",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "A statement for part of the period opens with the balance brought forward",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "REP-08",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "QA books: the sales figure is the same in Profit & Loss, Category, Channel, Store, Staff and Sales Register",
+   "status": "Pass",
+   "detail": "₹15,940.5",
+   "ms": 0
+  },
+  {
+   "id": "REP-09",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "QA books: Daily Sales net equals the Sales Register bill total; units match too",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "REP-10",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "QA books: Profit & Loss lines add up to net profit; gross profit equals the channel report",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "REP-11",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "QA books: net profit per item in Unit Economics adds back to the business total",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "REP-12",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "QA books: Party Outstanding equals the dashboard and the party list",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "REP-13",
+   "area": "Reports and exports",
+   "type": "Calculation",
+   "title": "QA books: Stock Summary equals the Stock screen and the dashboard",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "LOAD-01",
+   "area": "Many users at once, and volume",
+   "type": "Concurrency",
+   "title": "25 bills saved at the same instant get 25 different, consecutive bill numbers",
+   "status": "Pass",
+   "detail": "",
+   "ms": 30
+  },
+  {
+   "id": "LOAD-02",
+   "area": "Many users at once, and volume",
+   "type": "Concurrency",
+   "title": "12 buyers race for the last 5 pieces: exactly 5 bills succeed and stock ends at zero",
+   "status": "Pass",
+   "detail": "",
+   "ms": 15
+  },
+  {
+   "id": "LOAD-03",
+   "area": "Many users at once, and volume",
+   "type": "Performance",
+   "title": "300 bills entered one after another across 30 days and 4 channels",
+   "status": "Pass",
+   "detail": "2.3 ms per bill",
+   "ms": 699
+  },
+  {
+   "id": "LOAD-04",
+   "area": "Many users at once, and volume",
+   "type": "Performance",
+   "title": "With 350+ bills, every report and the dashboard answer in under half a second",
+   "status": "Pass",
+   "detail": "slowest: day_book, 6 ms",
+   "ms": 56
+  },
+  {
+   "id": "LOAD-05",
+   "area": "Many users at once, and volume",
+   "type": "Calculation",
+   "title": "QA books after 350 bills: the sales figure is the same in Profit & Loss, Category, Channel, Store, Staff and Sales Register",
+   "status": "Pass",
+   "detail": "₹1,71,190.5",
+   "ms": 0
+  },
+  {
+   "id": "LOAD-06",
+   "area": "Many users at once, and volume",
+   "type": "Calculation",
+   "title": "QA books after 350 bills: Daily Sales net equals the Sales Register bill total; units match too",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "LOAD-07",
+   "area": "Many users at once, and volume",
+   "type": "Calculation",
+   "title": "QA books after 350 bills: Profit & Loss lines add up to net profit; gross profit equals the channel report",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "LOAD-08",
+   "area": "Many users at once, and volume",
+   "type": "Calculation",
+   "title": "QA books after 350 bills: net profit per item in Unit Economics adds back to the business total",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "LOAD-09",
+   "area": "Many users at once, and volume",
+   "type": "Calculation",
+   "title": "QA books after 350 bills: Party Outstanding equals the dashboard and the party list",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "LOAD-10",
+   "area": "Many users at once, and volume",
+   "type": "Calculation",
+   "title": "QA books after 350 bills: Stock Summary equals the Stock screen and the dashboard",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "SAFE-01",
+   "area": "Backup, restore and restart",
+   "type": "Recovery",
+   "title": "After the app is stopped and started again, the books are identical and users stay logged in",
+   "status": "Pass",
+   "detail": "",
+   "ms": 289
+  },
+  {
+   "id": "SAFE-02",
+   "area": "Backup, restore and restart",
+   "type": "Recovery",
+   "title": "The automatic daily backup file is there",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "SAFE-03",
+   "area": "Backup, restore and restart",
+   "type": "Recovery",
+   "title": "A downloaded backup, placed in a new empty copy, opens with the same books and the same logins",
+   "status": "Pass",
+   "detail": "260 KB backup",
+   "ms": 333
+  },
+  {
+   "id": "AI-01",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "Before any model is connected, Ask AI says what to do instead of failing",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "AI-02",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Negative",
+   "title": "The AI address must be a web address; an empty question is refused",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "AI-03",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Security",
+   "title": "The saved API key is never sent back to any screen; leaving the key box empty keeps the saved key",
+   "status": "Pass",
+   "detail": "",
+   "ms": 43
+  },
+  {
+   "id": "AI-04",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "The model list loads from the provider, sorted",
+   "status": "Pass",
+   "detail": "",
+   "ms": 4
+  },
+  {
+   "id": "AI-05",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "A question goes: model picks a report → server fetches it → model answers; the answer names its source",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "AI-06",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "A model reply with no usable plan still gets an answer from the two general reports",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "AI-07",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Security",
+   "title": "A hostile plan (made-up report names, path tricks, SQL in filters) is cut down to the one real report",
+   "status": "Pass",
+   "detail": "",
+   "ms": 11
+  },
+  {
+   "id": "AI-08",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Security",
+   "title": "An item name written like an instruction reaches the model only inside the marked data block",
+   "status": "Pass",
+   "detail": "",
+   "ms": 10
+  },
+  {
+   "id": "AI-09",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Security",
+   "title": "Phone numbers are never sent to the model, even when the report has a phone column",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "AI-10",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "Provider problems give a plain message: wrong key, free limit used up, empty reply, garbled reply, provider unreachable",
+   "status": "Pass",
+   "detail": "",
+   "ms": 21
+  },
+  {
+   "id": "AI-11",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "When a free provider says \"retry after 1s\", the app waits and retries by itself instead of failing",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2019
+  },
+  {
+   "id": "AI-12",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "AI",
+   "title": "Daily insights come back as 5 findings and 3 actions, are remembered for the day, and Refresh asks again",
+   "status": "Pass",
+   "detail": "",
+   "ms": 40
+  },
+  {
+   "id": "AI-13",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Security",
+   "title": "Clearing the key really removes it",
+   "status": "Pass",
+   "detail": "",
+   "ms": 10
+  },
+  {
+   "id": "AI-14",
+   "area": "AI assistant (tested against a stand-in model)",
+   "type": "Integrity",
+   "title": "The app logged no crash or unexpected server error during the whole run",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-01",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Functional",
+   "title": "The demo copy builds its own sample business, shows its own login, and that login works",
+   "status": "Pass",
+   "detail": "205 bills this month, 3 locations selling",
+   "ms": 49
+  },
+  {
+   "id": "DEMO-02",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Negative",
+   "title": "Sample data cannot be loaded on top of existing books",
+   "status": "Pass",
+   "detail": "",
+   "ms": 2
+  },
+  {
+   "id": "DEMO-03",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: the sales figure is the same in Profit & Loss, Category, Channel, Store, Staff and Sales Register",
+   "status": "Pass",
+   "detail": "₹7,68,845.15",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-04",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: Daily Sales net equals the Sales Register bill total; units match too",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-05",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: Profit & Loss lines add up to net profit; gross profit equals the channel report",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-06",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: net profit per item in Unit Economics adds back to the business total",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-07",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: Party Outstanding equals the dashboard and the party list",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-08",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: Stock Summary equals the Stock screen and the dashboard",
+   "status": "Pass",
+   "detail": "",
+   "ms": 0
+  },
+  {
+   "id": "DEMO-09",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: the dashboard month profit equals Profit & Loss for the month",
+   "status": "Pass",
+   "detail": "",
+   "ms": 7
+  },
+  {
+   "id": "DEMO-10",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Calculation",
+   "title": "Demo books: profit of each location plus common expenses adds up to the whole business",
+   "status": "Pass",
+   "detail": "",
+   "ms": 6
+  },
+  {
+   "id": "DEMO-11",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Integrity",
+   "title": "Demo books: no item is below zero anywhere, bill numbers are unique, and cost sheets carry a cost per piece",
+   "status": "Pass",
+   "detail": "392 sale bills, 6 manufactured items",
+   "ms": 11
+  },
+  {
+   "id": "DEMO-12",
+   "area": "Demo copy: 40 days of sample data",
+   "type": "Performance",
+   "title": "Demo books: slowest report and dashboard time",
+   "status": "Pass",
+   "detail": "slowest: dashboard, 6 ms",
+   "ms": 63
+  }
+ ]
+}

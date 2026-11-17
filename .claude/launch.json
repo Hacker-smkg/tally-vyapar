@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "vastra-books", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 4000 },
+    { "name": "vastra-books-demo", "runtimeExecutable": "node", "runtimeArgs": ["--disable-warning=ExperimentalWarning", "server/index.ts", "--dev", "--demo"], "port": 4010 }
+  ]
+}
