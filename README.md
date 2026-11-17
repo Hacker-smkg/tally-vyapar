@@ -6,6 +6,11 @@ Built for 1 to 10 users. It runs on one office computer; everyone else opens it 
 
 Design and data model: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
+## 🌐 Live Demo (Cloudflare Free Tier)
+
+👉 **[Open Live App on Cloudflare](https://generic-nutritional-griffin-involvement.trycloudflare.com)**  
+*Fullstack client + server is live! Click **"Use demo login"** on the landing page to enter the Royal Fashion store with 40 days of pre-populated clothing sales, inventory, and profit reports.*
+
 ## 🚀 Deploy to Cloud (Client + Server Fullstack)
 
 Both the React frontend and Express backend are pre-configured to deploy together:
